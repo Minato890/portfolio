@@ -22,7 +22,7 @@ window.LANG.ja = {
     chhattisgarhi: { name: "チャッティースガリー語", level: "母語" },
     japanese: { name: "日本語",       level: "JLPT N3、2026年12月にN2" }
   },
-  projects: { demo: "開く", code: "ソースコード" },
+  projects: { demo: "開く", code: "ソースコード", live: "サイトを開く", hint: "ライブサイトを開く", groups: { frontend: "フロントエンド", data: "データ・API", automation: "自動化", stack: "使用技術" } },
   skills: { groups: { languages: "言語", tools: "フレームワーク・ツール", core: "基礎" } },
   hobbies: { open: "開く" },
   contact: { email: "メール", copy: "コピー", copied: "コピーしました", locationLabel: "所在地", location: "北海道札幌市" },
@@ -87,14 +87,26 @@ window.LANG.ja = {
     }
   },
   projectText: {
+    cinema: {
+      title: "Cinema & Music Library",
+      description: "観た映画と聴いている音楽を記録するために作った、小さなサイトです。",
+      points: [
+        "ライブラリを検索でき、コレクション、ランキング、視聴ステータス、作品タイプで絞り込めます。",
+        "映画のデータはNotionから、よく聴くアーティスト・曲・プレイリストはSpotifyから取得しています。",
+        "ポスターはTMDBから取得し、GitHub Actionsでデータを自動更新しています。"
+      ],
+      shots: ["トップ12", "ライブラリ", "音楽"]
+    },
     gwent: {
       title: "Gwent-Classic",
       description: "ウィッチャーの世界観にインスパイアされた、ブラウザで遊べるカードゲームです。",
       points: [
         "バニラJavaScript(ES6+)、HTML5、CSS3で開発。",
         "ターン制のルール、状態管理、リアルタイムのスコア計算を実装。",
-        "元のグウェントに着想を得たCSSアニメーション付きのレスポンシブUIを設計。"
-      ]
+        "元のグウェントに着想を得たCSSアニメーション付きのレスポンシブUIを設計。",
+        "デッキ編集機能付きで、陣営とリーダーを選び、デッキのアップロード・ダウンロードもできます。"
+      ],
+      shots: ["デッキ編集", "リーダー選択", "ゲーム盤面"]
     }
   },
   certText: {

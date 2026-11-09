@@ -123,17 +123,53 @@ document.addEventListener("DOMContentLoaded", () => {
     // Projects
     $("project-list").innerHTML = S.projects.map((p) => {
       const t = pick("projectText", p.id);
+      const live = !!p.demo;
       const links = [
-        p.demo && `<a href="${p.demo}" target="_blank" rel="noopener">${ico("arrow")}${I18N.t("projects.demo")}</a>`,
-        p.code && `<a href="${p.code}" target="_blank" rel="noopener">${ico("code")}${I18N.t("projects.code")}</a>`
+        p.demo && `<a class="btn primary" href="${p.demo}" target="_blank" rel="noopener">${ico("arrow")}${I18N.t("projects.live")}</a>`,
+        p.code && `<a class="btn" href="${p.code}" target="_blank" rel="noopener">${ico("code")}${I18N.t("projects.code")}</a>`
       ].filter(Boolean).join("");
-      return `<article class="project">
-        <h3>${t.title || p.id}</h3>
-        <p>${t.description || ""}</p>
-        ${points(t.points)}${chips(p.tech)}
-        ${links ? `<p class="project-links">${links}</p>` : ""}
+      const tech = (p.tech || []).map((g) =>
+        `<div class="tech-group"><span class="tech-label">${I18N.t("projects.groups." + g.key)}</span>${chips(g.items)}</div>`).join("");
+      const shots = p.shots || [];
+      const label = (i) => (t.shots && t.shots[i]) || `${t.title} ${i + 1}`;
+      const addr = p.demo ? p.demo.replace(/^https?:\/\//, "").replace(/\/$/, "") : "";
+      const img = `<img class="shot-main" src="assets/img/projects/${shots[0]}.webp" alt="${t.title}: ${label(0)}" width="1600" height="900">`;
+      const view = live
+        ? `<a class="shot-view" href="${p.demo}" target="_blank" rel="noopener" aria-label="${I18N.t("projects.hint")}: ${t.title}">${img}<span class="shot-hint">${I18N.t("projects.hint")} ${ico("arrow")}</span></a>`
+        : `<div class="shot-view">${img}</div>`;
+      const thumbs = shots.length > 1 ? `<div class="shot-thumbs">${shots.map((f, i) =>
+        `<button type="button" class="shot-thumb" data-src="assets/img/projects/${f}.webp" data-alt="${t.title}: ${label(i)}"${i === 0 ? ' aria-current="true"' : ""}>
+          <img src="assets/img/projects/${f}.webp" alt="" loading="lazy"><span>${label(i)}</span></button>`).join("")}</div>` : "";
+      return `<article class="project${live ? "" : " static"}">
+        <div class="project-body">
+          <h3>${t.title || p.id}</h3>
+          <p>${t.description || ""}</p>
+          ${points(t.points)}
+          <div class="tech">${tech}</div>
+          ${links ? `<p class="project-links">${links}</p>` : ""}
+        </div>
+        <div class="project-media">
+          <div class="shot-frame${live ? " clickable" : ""}">
+            <div class="shot-bar"><i></i><i></i><i></i><span class="shot-url">${addr}</span></div>
+            ${view}
+          </div>
+          ${thumbs}
+        </div>
       </article>`;
     }).join("");
+    const plist = $("project-list");
+    if (!plist._wired) { // screenshot thumbnails swap the main image
+      plist._wired = true;
+      plist.addEventListener("click", (e) => {
+        const b = e.target.closest(".shot-thumb");
+        if (!b) return;
+        const card = b.closest(".project");
+        const main = card.querySelector(".shot-main");
+        main.src = b.dataset.src; main.alt = b.dataset.alt;
+        card.querySelectorAll(".shot-thumb").forEach((x) => x.removeAttribute("aria-current"));
+        b.setAttribute("aria-current", "true");
+      });
+    }
 
     // Skills, coding profiles, certifications
     $("skill-list").innerHTML = S.skills.map((g) =>

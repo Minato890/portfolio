@@ -22,7 +22,7 @@ window.LANG.en = {
     chhattisgarhi: { name: "Chhattisgarhi", level: "Native" },
     japanese: { name: "Japanese", level: "JLPT N3, N2 in Dec 2026" }
   },
-  projects: { demo: "Open", code: "Source code" },
+  projects: { demo: "Open", code: "Source code", live: "Live site", hint: "Open live site", groups: { frontend: "Frontend", data: "Data & APIs", automation: "Automation", stack: "Built with" } },
   skills: { groups: { languages: "Languages", tools: "Frameworks & tools", core: "Core" } },
   hobbies: { open: "Open" },
   contact: { email: "Email", copy: "Copy", copied: "Copied", locationLabel: "Location", location: "Sapporo, Hokkaido, Japan" },
@@ -87,14 +87,26 @@ window.LANG.en = {
     }
   },
   projectText: {
+    cinema: {
+      title: "Cinema & Music Library",
+      description: "A small site I made to keep track of the movies I watch and the music I listen to.",
+      points: [
+        "Search the library, and filter by collection, ranking, watch status and type.",
+        "Movies come from my Notion. My top artists, tracks and playlists come from Spotify.",
+        "Posters come from TMDB, and GitHub Actions keeps the data up to date."
+      ],
+      shots: ["Top 12", "Library", "Music"]
+    },
     gwent: {
       title: "Gwent-Classic",
       description: "A Witcher-inspired card game that runs in the browser.",
       points: [
         "Built with vanilla JavaScript (ES6+), HTML5, and CSS3.",
         "Implemented turn-based mechanics, state management, and real-time score calculation.",
-        "Designed a responsive UI with CSS animations inspired by the original Gwent."
-      ]
+        "Designed a responsive UI with CSS animations inspired by the original Gwent.",
+        "Includes a deck builder: pick a faction and a leader, and upload or download your deck."
+      ],
+      shots: ["Deck builder", "Leader selection", "Game board"]
     }
   },
   certText: {

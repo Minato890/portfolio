@@ -2,6 +2,7 @@
 // Leave a url as "" to hide it automatically.
 
 // Your movie list (Notion for now; swap in the new website's URL when it's ready)
+const MOVIE_SITE_URL = "https://minato890.github.io/movie-list/";
 const MOVIE_LIST_URL = "https://secretive-wedelia-913.notion.site/CINEMA-2dd95c47255a80048febc25f4995f234";
 
 window.SITE = {
@@ -57,9 +58,9 @@ window.SITE = {
 
   // Text for each id lives in lang/en.js and lang/ja.js (experienceText, educationText, projectText)
   experience: [
-    { id: "vista-engineer", tech: ["TypeScript", "Next.js", "Cloudflare", "REST APIs", "Figma"],
+    { id: "vista-engineer", tech: ["TypeScript", "Next.js", "CSS", "Cloudflare", "REST APIs", "Git", "GitLab", "Jira", "Slack", "Figma"],
       proof: "assets/docs/experience-certificate.pdf" },
-    { id: "vista-intern",   tech: ["Contentful", "React", "GraphQL"],
+    { id: "vista-intern",   tech: ["Contentful", "React", "GraphQL", "CSS", "Git", "GitLab", "Jira", "Slack"],
       proof: "assets/docs/internship-certificate.pdf" }
   ],
 
@@ -71,7 +72,16 @@ window.SITE = {
   ],
 
   projects: [
-    { id: "gwent", tech: ["JavaScript", "HTML5", "CSS3"], demo: "", code: "" }
+    { id: "cinema", demo: MOVIE_SITE_URL, code: "",
+      tech: [
+        { key: "frontend",   items: ["React", "TypeScript", "Vite"] },
+        { key: "data",       items: ["Notion API", "Spotify API", "TMDB"] },
+        { key: "automation", items: ["GitHub Actions"] }
+      ],
+      shots: ["cinema-1", "cinema-2", "cinema-3"] },
+    { id: "gwent", demo: "", code: "",
+      tech: [{ key: "stack", items: ["JavaScript", "HTML5", "CSS3"] }],
+      shots: ["gwent-1", "gwent-2", "gwent-3"] }
   ],
 
   // Shown on the About tab. Use url, or linkKey to reuse an entry from links above.
