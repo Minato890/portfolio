@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ja" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ディーパック・パテル</title>
+  <meta name="description" content="札幌在住のソフトウェアエンジニア、ディーパック・パテルのポートフォリオです。">
+  <script>
+    // Always open in dark mode; the visitor can switch with the toggle (not remembered between visits)
+    document.documentElement.dataset.theme = "dark";
+  </script>
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <meta name="theme-color" content="#090e18">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- Order matters: icons + data, then languages, then i18n, then main -->
+  <script src="assets/js/icons.js" defer></script>
+  <script src="assets/js/data.js" defer></script>
+  <script src="assets/js/lang/en.js" defer></script>
+  <script src="assets/js/lang/ja.js" defer></script>
+  <script src="assets/js/i18n.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+</head>
+<body>
+  <div class="app">
+    <aside class="side">
+      <div class="who">
+        <img class="avatar" src="assets/img/profile.jpg" alt="" onerror="this.remove()">
+        <h1 id="hero-name">ディーパック・パテル</h1>
+        <p class="loc"><span data-icon="pin"></span><span data-i18n="hero.location">日本、札幌</span></p>
+      </div>
+      <div class="side-foot">
+        <ul class="social" id="social-links"></ul>
+        <small>© <span id="year"></span> <span id="footer-name">ディーパック・パテル</span></small>
+      </div>
+    </aside>
+
+    <div class="content">
+      <div class="bar">
+        <nav class="tabs" id="tabs" role="tablist" aria-label="Sections">
+          <button role="tab" id="tab-about" aria-controls="panel-about" data-tab="about"><span data-icon="user"></span><span data-i18n="nav.about">自己紹介</span></button>
+          <button role="tab" id="tab-experience" aria-controls="panel-experience" data-tab="experience"><span data-icon="briefcase"></span><span data-i18n="nav.experience">経歴</span></button>
+          <button role="tab" id="tab-education" aria-controls="panel-education" data-tab="education"><span data-icon="cap"></span><span data-i18n="nav.education">学歴</span></button>
+          <button role="tab" id="tab-skills" aria-controls="panel-skills" data-tab="skills"><span data-icon="zap"></span><span data-i18n="nav.skills">スキル・資格</span></button>
+          <button role="tab" id="tab-contact" aria-controls="panel-contact" data-tab="contact"><span data-icon="mail"></span><span data-i18n="nav.contact">連絡先</span></button>
+          <span class="indicator" id="indicator" aria-hidden="true"></span>
+        </nav>
+        <div class="controls">
+          <div class="seg" id="theme-toggle" data-pos="1" role="group" aria-label="Theme">
+            <span class="thumb" aria-hidden="true"></span>
+            <button type="button" data-set-theme="light" aria-pressed="false" aria-label="Light theme"><span data-icon="sun"></span></button>
+            <button type="button" data-set-theme="dark" aria-pressed="true" aria-label="Dark theme"><span data-icon="moon"></span></button>
+          </div>
+          <div class="seg" id="lang-toggle" data-pos="1" role="group" aria-label="Language">
+            <span class="thumb" aria-hidden="true"></span>
+            <button type="button" data-set-lang="en" aria-pressed="false">English</button>
+            <button type="button" data-set-lang="ja" aria-pressed="true" lang="ja">日本語</button>
+          </div>
+        </div>
+      </div>
+
+      <main class="scroll" id="scroll">
+        <section class="panel" id="panel-about" role="tabpanel" aria-labelledby="tab-about" hidden>
+          <div class="about">
+            <div class="about-main">
+              <div class="about-text" id="about-text"></div>
+            </div>
+            <aside class="side-cards">
+              <div class="lang-card">
+                <h3><span data-icon="globe"></span><span data-i18n="about.languagesHeading">言語</span></h3>
+                <ul class="bars" id="lang-bars"></ul>
+              </div>
+              <div class="lang-card">
+                <h3><span data-icon="heart"></span><span data-i18n="sections.hobbies">趣味</span></h3>
+                <div class="hobby-pills" id="hobby-list"></div>
+              </div>
+            </aside>
+          </div>
+        </section>
+
+        <section class="panel" id="panel-experience" role="tabpanel" aria-labelledby="tab-experience" hidden>
+          <h2 data-i18n="sections.work">職歴</h2>
+          <div class="entries" id="experience-list"></div>
+          <h2 class="gap" data-i18n="sections.projects">プロジェクト</h2>
+          <div class="project-list" id="project-list"></div>
+        </section>
+
+        <section class="panel" id="panel-education" role="tabpanel" aria-labelledby="tab-education" hidden>
+          <div class="entries" id="education-list"></div>
+        </section>
+
+        <section class="panel" id="panel-skills" role="tabpanel" aria-labelledby="tab-skills" hidden>
+          <h2 data-i18n="sections.skills">スキル</h2>
+          <div class="skill-groups" id="skill-list"></div>
+          <h2 class="gap" data-i18n="sections.profiles">コーディングプロフィール</h2>
+          <div class="card-grid" id="profile-grid"></div>
+          <div id="cert-wrap" hidden>
+            <h2 class="gap" data-i18n="sections.certs">資格</h2>
+            <div class="card-grid" id="cert-list"></div>
+          </div>
+        </section>
+
+        <section class="panel" id="panel-contact" role="tabpanel" aria-labelledby="tab-contact" hidden>
+          <div class="email-card">
+            <span class="tile"><span data-icon="mail"></span></span>
+            <span class="txt"><strong data-i18n="contact.email">メール</strong><a id="email-link" href="#"></a></span>
+            <button type="button" class="copy" id="copy-email"><span data-icon="copy"></span><span id="copy-label" data-i18n="contact.copy">コピー</span></button>
+          </div>
+          <div class="card-grid" id="contact-grid"></div>
+        </section>
+      </main>
+    </div>
+  </div>
+</body>
+</html>
