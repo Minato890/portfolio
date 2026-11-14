@@ -1,5 +1,4 @@
-// Language-independent content. Edit this file for links, tech stacks, and the lists.
-// Leave a url as "" to hide it automatically.
+
 
 // Your movie list (Notion for now; swap in the new website's URL when it's ready)
 const MOVIE_SITE_URL = "https://minato890.github.io/movie-list/";

@@ -92,7 +92,7 @@ window.LANG.en = {
       description: "A small site I made to keep track of the movies I watch and the music I listen to.",
       points: [
         "Search the library, and filter by collection, ranking, watch status and type.",
-        "Movies come from my Notion. My top artists, tracks and playlists come from Spotify.",
+        "Movies come from my Notion, and my anime list comes from MyAnimeList. My top artists, tracks and playlists come from Spotify.",
         "Posters come from TMDB, and GitHub Actions keeps the data up to date."
       ],
       shots: ["Top 12", "Library", "Music"]
