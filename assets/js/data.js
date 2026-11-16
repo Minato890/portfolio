@@ -1,6 +1,4 @@
 
-
-// Your movie list (Notion for now; swap in the new website's URL when it's ready)
 const MOVIE_SITE_URL = "https://minato890.github.io/movie-list/";
 const MOVIE_LIST_URL = "https://secretive-wedelia-913.notion.site/CINEMA-2dd95c47255a80048febc25f4995f234";
 
@@ -74,7 +72,8 @@ window.SITE = {
     { id: "cinema", demo: MOVIE_SITE_URL, code: "",
       tech: [
         { key: "frontend",   items: ["React", "TypeScript", "Vite"] },
-        { key: "data",       items: ["Notion API", "Spotify API", "TMDB"] },
+        { key: "backend",    items: ["Cloudflare Workers"] },
+        { key: "data",       items: ["Notion API", "MyAnimeList API", "Spotify API", "TMDB"] },
         { key: "automation", items: ["GitHub Actions"] }
       ],
       shots: ["cinema-1", "cinema-2", "cinema-3"] },

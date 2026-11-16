@@ -22,7 +22,7 @@ window.LANG.ja = {
     chhattisgarhi: { name: "チャッティースガリー語", level: "母語" },
     japanese: { name: "日本語",       level: "JLPT N3、2026年12月にN2" }
   },
-  projects: { demo: "開く", code: "ソースコード", live: "サイトを開く", hint: "ライブサイトを開く", groups: { frontend: "フロントエンド", data: "データ・API", automation: "自動化", stack: "使用技術" } },
+  projects: { demo: "開く", code: "ソースコード", live: "サイトを開く", hint: "ライブサイトを開く", groups: { frontend: "フロントエンド", backend: "バックエンド", data: "データ・API", automation: "自動化", stack: "使用技術" } },
   skills: { groups: { languages: "言語", tools: "フレームワーク・ツール", core: "基礎" } },
   hobbies: { open: "開く" },
   contact: { email: "メール", copy: "コピー", copied: "コピーしました", locationLabel: "所在地", location: "北海道札幌市" },
@@ -93,7 +93,8 @@ window.LANG.ja = {
       points: [
         "ライブラリを検索でき、コレクション、ランキング、視聴ステータス、作品タイプで絞り込めます。",
         "映画のデータはNotionから、アニメのリストはMyAnimeListから、よく聴くアーティスト・曲・プレイリストはSpotifyから取得しています。",
-        "ポスターはTMDBから取得し、GitHub Actionsでデータを自動更新しています。"
+        "ポスターはTMDBから取得し、GitHub Actionsでデータを自動更新しています。",
+        "友達が映画・アニメ・音楽・本のおすすめを送ることができ、Cloudflare Worker経由でNotionに保存されます。"
       ],
       shots: ["トップ12", "ライブラリ", "音楽"]
     },

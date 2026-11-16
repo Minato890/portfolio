@@ -22,7 +22,7 @@ window.LANG.en = {
     chhattisgarhi: { name: "Chhattisgarhi", level: "Native" },
     japanese: { name: "Japanese", level: "JLPT N3, N2 in Dec 2026" }
   },
-  projects: { demo: "Open", code: "Source code", live: "Live site", hint: "Open live site", groups: { frontend: "Frontend", data: "Data & APIs", automation: "Automation", stack: "Built with" } },
+  projects: { demo: "Open", code: "Source code", live: "Live site", hint: "Open live site", groups: { frontend: "Frontend", backend: "Backend", data: "Data & APIs", automation: "Automation", stack: "Built with" } },
   skills: { groups: { languages: "Languages", tools: "Frameworks & tools", core: "Core" } },
   hobbies: { open: "Open" },
   contact: { email: "Email", copy: "Copy", copied: "Copied", locationLabel: "Location", location: "Sapporo, Hokkaido, Japan" },
@@ -93,7 +93,8 @@ window.LANG.en = {
       points: [
         "Search the library, and filter by collection, ranking, watch status and type.",
         "Movies come from my Notion, and my anime list comes from MyAnimeList. My top artists, tracks and playlists come from Spotify.",
-        "Posters come from TMDB, and GitHub Actions keeps the data up to date."
+        "Posters come from TMDB, and GitHub Actions keeps the data up to date.",
+        "Friends can leave movie, anime, music or book suggestions, saved to Notion through a Cloudflare Worker."
       ],
       shots: ["Top 12", "Library", "Music"]
     },
