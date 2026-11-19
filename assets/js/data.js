@@ -1,6 +1,6 @@
 
 const MOVIE_SITE_URL = "https://minato890.github.io/movie-list/";
-const MOVIE_LIST_URL = "https://secretive-wedelia-913.notion.site/CINEMA-2dd95c47255a80048febc25f4995f234";
+const MOVIE_LIST_URL = "https://minato890.github.io/movie-list/";
 
 window.SITE = {
   name: { en: "Deepak Patel", ja: "ディーパック・パテル" },
